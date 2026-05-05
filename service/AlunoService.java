@@ -51,4 +51,8 @@ public class AlunoService {
 		}
 		return false;
 	}
+	//Query Method
+	public List <Aluno> buscarAlunosPorCidade (String cidade){
+		return alunoRepository.findByCidade(cidade);
+	}
 }

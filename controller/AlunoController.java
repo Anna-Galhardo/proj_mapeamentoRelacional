@@ -73,4 +73,11 @@ public class AlunoController {
             return ResponseEntity.notFound().build(); 
         }
     }
+    
+    //Query Method
+    @GetMapping("/cidade/{cidade}")
+    public ResponseEntity<List<Aluno>> buscarAlunosPorCidade(@PathVariable String cidade){
+    	List<Aluno> alunos = alunoService.buscarAlunosPorCidade(cidade);
+    	return ResponseEntity.ok(alunos);
+    }
 }
